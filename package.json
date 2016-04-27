@@ -1,0 +1,34 @@
+{
+  "name": "livehub",
+  "version": "0.0.1",
+  "description": "Cross platform desktop notifications for GitHub.",
+  "main": "livehub.js",
+  "dependencies": {
+    "github-notifications": "^1.0.0",
+    "js-yaml": "^3.6.0",
+    "left-pad": "^1.0.2",
+    "node-notifier": "^4.5.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/bdero/livehub.git"
+  },
+  "keywords": [
+    "github",
+    "desktop",
+    "notifications",
+    "linux",
+    "osx",
+    "windows"
+  ],
+  "author": "Brandon DeRosier",
+  "license": "GPL-3.0",
+  "bugs": {
+    "url": "https://github.com/bdero/livehub/issues"
+  },
+  "homepage": "https://github.com/bdero/livehub#readme"
+}

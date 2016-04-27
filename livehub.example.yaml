@@ -1,0 +1,5 @@
+# Copy this file to "livehub.yaml" and fill in the configuration below.
+
+# Access tokens can be created here: https://github.com/settings/tokens
+# Note: Make sure the token has "notifications" permission!
+token: 'Replace this with GitHub token'
