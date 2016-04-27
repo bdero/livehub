@@ -18,7 +18,7 @@ const gnotify = HubNotifications(config.token);
 
 gnotify.on('data', function(notification) {
   const title = `${notification.subject.type} (${notification.reason}): ${notification.repository.full_name}`;
-  const message = `${notification.subject.title}`;
+  const message = `${notification.subject.title} - ${notification.repository.html_url}`;
 
   notifier.notify({title: title, message: message});
 
