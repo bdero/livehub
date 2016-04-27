@@ -1,3 +1,5 @@
+#!/usr/bin/env node
+
 'use strict';
 
 const notifier = require('node-notifier'),
@@ -28,7 +30,7 @@ gnotify.on('data', function(notification) {
     TITLE: title,
     MESSAGE: message,
     URL: url
-  }
+  };
 
   console.log();
   for (const row in log) {
