@@ -1,6 +1,6 @@
 {
   "name": "livehub",
-  "version": "0.0.1",
+  "version": "0.1.0",
   "description": "Cross platform desktop notifications for GitHub.",
   "main": "livehub.js",
   "bin": "./livehub.js",
