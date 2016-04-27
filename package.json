@@ -3,6 +3,7 @@
   "version": "0.0.1",
   "description": "Cross platform desktop notifications for GitHub.",
   "main": "livehub.js",
+  "bin": "./livehub.js",
   "dependencies": {
     "github-notifications": "^1.0.0",
     "js-yaml": "^3.6.0",
