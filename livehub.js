@@ -4,7 +4,8 @@ const notifier = require('node-notifier'),
   HubNotifications = require('github-notifications'),
   yaml = require('js-yaml'),
   fs = require('fs'),
-  leftpad = require('left-pad');
+  leftpad = require('left-pad'),
+  ellipsis = require('text-ellipsis');
 
 try {
   var config = yaml.safeLoad(fs.readFileSync('livehub.yaml', 'utf8'));
@@ -18,14 +19,15 @@ const gnotify = HubNotifications(config.token);
 
 gnotify.on('data', function(notification) {
   const title = `${notification.subject.type} (${notification.reason}): ${notification.repository.full_name}`;
-  const message = `${notification.subject.title} - ${notification.repository.html_url}`;
+  const message = notification.subject.title;
+  const url = notification.repository.html_url;
 
-  notifier.notify({title: title, message: message});
+  notifier.notify({title: title, message: `${ellipsis(message, 50, {ellipsis: '..'})} ${url}`});
 
   const log = {
-    TITLE: `${title}`,
-    MESSAGE: `${message}`,
-    URL: `${notification.repository.html_url}`
+    TITLE: title,
+    MESSAGE: message,
+    URL: url
   }
 
   console.log();

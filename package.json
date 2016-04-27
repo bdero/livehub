@@ -7,7 +7,8 @@
     "github-notifications": "^1.0.0",
     "js-yaml": "^3.6.0",
     "left-pad": "^1.0.2",
-    "node-notifier": "^4.5.0"
+    "node-notifier": "^4.5.0",
+    "text-ellipsis": "^1.0.3"
   },
   "devDependencies": {},
   "scripts": {
