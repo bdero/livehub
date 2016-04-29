@@ -19,7 +19,14 @@ try {
 
 const gnotify = HubNotifications(config.token);
 
+let lastNotification = null;
 gnotify.on('data', function(notification) {
+  if (lastNotification !== null && notification.id === lastNotification.id) {
+    console.log(`Duplicate notification: #{$notification.id}`);
+    return;
+  }
+  lastNotification = notification;
+
   const title = `${notification.subject.type} (${notification.reason}): ${notification.repository.full_name}`;
   const message = notification.subject.title;
   const url = notification.repository.html_url;
@@ -27,6 +34,7 @@ gnotify.on('data', function(notification) {
   notifier.notify({title: title, message: `${ellipsis(message, 50, {ellipsis: '..'})} ${url}`});
 
   const log = {
+    ID: notification.id,
     TITLE: title,
     MESSAGE: message,
     URL: url
